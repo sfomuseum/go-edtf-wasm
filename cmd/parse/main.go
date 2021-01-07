@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/sfomuseum/go-edtf/parser"
-	"syscall/js"
-	"log"
 	"encoding/json"
+	"github.com/sfomuseum/go-edtf/parser"
+	"log"
+	"syscall/js"
 )
 
 var parse_func js.Func
@@ -19,7 +19,7 @@ func main() {
 		}
 
 		edtf_str := args[0].String()
-		
+
 		edtf_d, err := parser.ParseString(edtf_str)
 
 		if err != nil {
