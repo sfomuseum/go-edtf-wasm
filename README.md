@@ -1,6 +1,6 @@
 # go-edtf-wasm
 
-![](docs/images/edtf-parse-wasm.png)
+![](docs/images/go-edtf-wasm.png)
 
 Go package for exposing sfomuseum/go-edtf functionality as WebAssembly binaries.
 
