@@ -66,7 +66,7 @@ By default the `server` tool assumes it is running from the `go-edtf-wasm` folde
 
 If you need or want to specify an alternate root directory start the server tool with the `-root` flag pointing to the correct folder to use.
 
-_Once Go 1.16 has been released and the `www` folder can be embedded directly in the `server` binary that will become the default behaviour._
+_Once Go 1.16 has been released and the `www` folder can be embedded directly in the `server` binary that will become the default behaviour. There is a work version of this in [the go-1.16 branch](https://github.com/sfomuseum/go-edtf-wasm/tree/go-1.16) but remember that you'll need to build a copy of Go 1.16, which is still in active development, from source in order to compile things._
 
 ## See also
 
