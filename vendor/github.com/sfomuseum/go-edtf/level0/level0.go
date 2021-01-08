@@ -1,16 +1,15 @@
 package level0
 
 import (
-	"errors"
 	"github.com/sfomuseum/go-edtf"
 	"github.com/sfomuseum/go-edtf/re"
 )
 
 const LEVEL int = 0
 
-const DATE string = "date"
-const DATE_AND_TIME string = "date and time"
-const TIME_INTERVAL string = "time interval"
+const DATE string = "Date"
+const DATE_AND_TIME string = "Date and Time"
+const TIME_INTERVAL string = "Time Interval"
 
 func IsLevel0(edtf_str string) bool {
 	return re.Level0.MatchString(edtf_str)
@@ -30,7 +29,7 @@ func Matches(edtf_str string) (string, error) {
 		return TIME_INTERVAL, nil
 	}
 
-	return "", errors.New("Invalid Level 0 string")
+	return "", edtf.Invalid("Invalid Level 0 string", edtf_str)
 }
 
 func ParseString(edtf_str string) (*edtf.EDTFDate, error) {
@@ -47,5 +46,5 @@ func ParseString(edtf_str string) (*edtf.EDTFDate, error) {
 		return ParseTimeInterval(edtf_str)
 	}
 
-	return nil, errors.New("Invalid Level 0 string")
+	return nil, edtf.Invalid("Invalid Level 0 string", edtf_str)
 }

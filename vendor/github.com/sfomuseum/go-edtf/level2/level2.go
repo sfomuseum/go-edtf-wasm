@@ -1,21 +1,20 @@
 package level2
 
 import (
-	"errors"
 	"github.com/sfomuseum/go-edtf"
 	"github.com/sfomuseum/go-edtf/re"
 )
 
 const LEVEL int = 2
 
-const EXPONENTIAL_YEAR string = "exponential year"
-const SIGNIFICANT_DIGITS string = "significant digits"
-const SUB_YEAR_GROUPINGS string = "sub year groupings"
-const SET_REPRESENTATIONS string = "set representations"
-const GROUP_QUALIFICATION string = "group qualification"
-const INDIVIDUAL_QUALIFICATION string = "individual qualification"
-const UNSPECIFIED_DIGIT string = "unspecified digit"
-const INTERVAL string = "interval"
+const EXPONENTIAL_YEAR string = "Exponential year"
+const SIGNIFICANT_DIGITS string = "Significant digits"
+const SUB_YEAR_GROUPINGS string = "Sub-year groupings"
+const SET_REPRESENTATIONS string = "Set representation"
+const GROUP_QUALIFICATION string = "Qualification (Group)"
+const INDIVIDUAL_QUALIFICATION string = "Qualification (Individual)"
+const UNSPECIFIED_DIGIT string = "Unspecified Digit"
+const INTERVAL string = "Interval"
 
 func IsLevel2(edtf_str string) bool {
 	return re.Level2.MatchString(edtf_str)
@@ -55,7 +54,7 @@ func Matches(edtf_str string) (string, error) {
 		return INTERVAL, nil
 	}
 
-	return "", errors.New("Invalid or unsupported Level 2 string")
+	return "", edtf.Invalid("Invalid or unsupported Level 2 string", edtf_str)
 }
 
 func ParseString(edtf_str string) (*edtf.EDTFDate, error) {
@@ -92,5 +91,5 @@ func ParseString(edtf_str string) (*edtf.EDTFDate, error) {
 		return ParseInterval(edtf_str)
 	}
 
-	return nil, errors.New("Invalid or unsupported Level 2 string")
+	return nil, edtf.Invalid("Invalid or unsupported Level 2 string", edtf_str)
 }

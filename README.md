@@ -6,7 +6,7 @@ Go package for exposing sfomuseum/go-edtf functionality as WebAssembly binaries.
 
 ## Important
 
-This is work in progress.
+This branch depends on and assumes you have build Go 1.16. If you are using the `Makefile` targets described below you should update the `GO` variable defined at the top of the file to point to your Go 1.16 binary.
 
 ## Building go-edtf-wasm
 
