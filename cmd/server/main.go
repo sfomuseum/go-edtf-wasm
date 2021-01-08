@@ -2,16 +2,18 @@ package main
 
 import (
 	"context"
+	"embed"
 	"flag"
 	"github.com/aaronland/go-http-server"
 	"log"
 	"net/http"
-	"path/filepath"
 )
+
+//go:embed www
+var web_app embed.FS
 
 func main() {
 
-	root := flag.String("root", "www", "...")
 	server_uri := flag.String("server-uri", "http://localhost:8080", "A valid aaronland/go-http-server URI.")
 
 	flag.Parse()
@@ -24,16 +26,13 @@ func main() {
 		log.Fatalf("Failed to create new server, %v", err)
 	}
 
-	abs_root, err := filepath.Abs(*root)
-
-	if err != nil {
-		log.Fatalf("Failed to derive absolute path for root '%s', %v", abs_root, err)
-	}
-	
-	http_root := http.Dir(abs_root)
-	fs_handler := http.FileServer(http_root)
-	
 	mux := http.NewServeMux()
+
+	http_fs := http.FS(web_app)
+
+	fs_handler := http.FileServer(http_fs)
+	// fs_handler = http.StripPrefix("www", fs_handler)
+
 	mux.Handle("/", fs_handler)
 
 	log.Printf("Listening on %s", s.Address())
