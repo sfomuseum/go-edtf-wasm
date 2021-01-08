@@ -69,17 +69,18 @@ func ParseDateAndTime(edtf_str string) (*edtf.EDTFDate, error) {
 		return nil, err
 	}
 
+	t = t.UTC()
+
 	if is_bce {
 		t = common.TimeToBCE(t)
 	}
 
-	upper_date := &edtf.Date{
-		Time: &t,
-	}
+	upper_date := &edtf.Date{}
 
-	lower_date := &edtf.Date{
-		Time: &t,
-	}
+	lower_date := &edtf.Date{}
+
+	upper_date.SetTime(&t)
+	lower_date.SetTime(&t)
 
 	start := &edtf.DateRange{
 		Lower: lower_date,
