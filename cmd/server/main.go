@@ -9,7 +9,9 @@ import (
 	"net/http"
 )
 
-//go:embed www
+//go:embed index.html
+//go:embed wasm
+//go:embed javascript
 var web_app embed.FS
 
 func main() {
@@ -29,9 +31,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	http_fs := http.FS(web_app)
-
 	fs_handler := http.FileServer(http_fs)
-	// fs_handler = http.StripPrefix("www", fs_handler)
 
 	mux.Handle("/", fs_handler)
 

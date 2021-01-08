@@ -1,6 +1,6 @@
 module github.com/sfomuseum/go-edtf-wasm
 
-go 1.12
+go 1.16
 
 require (
 	github.com/aaronland/go-http-server v0.0.5
