@@ -4,7 +4,7 @@
 
 ## Important
 
-This is work in progress and not ready for general use yet.
+This is work in progress.
 
 ## Building go-edtf-wasm
 
@@ -17,7 +17,32 @@ GOOS=js GOARCH=wasm go build -mod vendor -o www/wasm/parse.wasm cmd/parse/main.g
 
 This will place a copy of the `parse.wasm` binary in `www/wasm/parse.wasm`.
 
-The binary exposes a single `parse_edtf` function that takes a single string as its input and returns a JSON-encoded [edtf.EDTFDate](https://github.com/sfomuseum/go-edtf#date-spans-or-edtfedtfdate), or nil, as its response. Obviously returning nil when there is a problem isn't great so the final return value remains to be determined.
+The binary exposes a single `parse_edtf` function that takes a single string as its input and returns a JSON-encoded [edtf.EDTFDate](https://github.com/sfomuseum/go-edtf#date-spans-or-edtfedtfdate), or nil, as its response.
+
+For example (with error handling omitted for the sake of brevity):
+
+```
+var raw_el = document.getElementById("raw");
+var edtf_str = raw_el.value;
+
+var result_el = document.getElementById("result");
+result_el.innerHTML = "";
+    
+var rsp = parse_edtf(edtf_str);
+
+if (! rsp){
+    return;
+}
+	
+var edtf_d = JSON.parse(rsp)
+	
+var pre = document.createElement("pre");
+pre.innerText = JSON.stringify(edtf_d, '', 2);
+	
+result_el.appendChild(pre);
+```
+
+Obviously returning nil when there is a problem isn't great so the final return value remains to be determined.
 
 ## Serving go-edtf-wasm
 
