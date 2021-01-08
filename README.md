@@ -4,10 +4,6 @@
 
 Go package for exposing sfomuseum/go-edtf functionality as WebAssembly binaries.
 
-## Important
-
-This is work in progress.
-
 ## Building go-edtf-wasm
 
 The easiest thing is to run the `wasm` Makefile target, like this:
