@@ -27,6 +27,8 @@ async function parse() {
     var edtf_str = raw_el.value;
 
     var result_el = document.getElementById("result");
+    result_el.style.display = "none";
+    
     result_el.innerHTML = "";
     
     try {
@@ -35,19 +37,22 @@ async function parse() {
 
 	if (! rsp){
 	    result_el.innerText = "There was a problem parsing your EDTF string.";
-	    return;
+	}
+
+	else {
+
+	    var edtf_d = JSON.parse(rsp)
+	    
+	    var pre = document.createElement("pre");
+	    pre.innerText = JSON.stringify(edtf_d, '', 2);
+	    
+	    result_el.appendChild(pre);
 	}
 	
-	var edtf_d = JSON.parse(rsp)
-	
-	var pre = document.createElement("pre");
-	pre.innerText = JSON.stringify(edtf_d, '', 2);
-	
-	result_el.appendChild(pre);
-	
     } catch (err) {
-	result_el.innerText = "Unable to parse your EDTF string: " + err;	
+	result_el.innerText = "Unable to parse your EDTF string: " + err;
     }
 
+    result_el.style.display = "block";	    	    
     return false;
 }

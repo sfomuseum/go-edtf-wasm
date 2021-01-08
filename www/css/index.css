@@ -1,0 +1,25 @@
+body {
+	margin: 1rem;
+}
+
+.italic {
+	font-style:italic;
+}
+
+#description {
+	margin-top:1rem;
+	margin-bottom:1rem;
+}
+
+#result {
+	border:solid thin;
+	font-family: monospace;
+	display:none;
+	background-color:#ededed;
+	padding:1rem;
+}
+
+#code {
+	border-top: solid thin;
+	font-size:small;
+}
