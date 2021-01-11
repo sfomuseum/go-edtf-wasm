@@ -12,6 +12,8 @@ github.com/sfomuseum/go-edtf v0.1.0 h1:ZtGEqionTmehMa0mQAJ3lDH3zaMNY9V8f+vHYNKpH
 github.com/sfomuseum/go-edtf v0.1.0/go.mod h1:1rP0EJZ/84j3HO80vGcnG2T9MFBDAFyTNtjrr8cv3T4=
 github.com/sfomuseum/go-edtf v0.2.0 h1:4fOK7kXC6mGVpntlt5ItbJZmJTaigYlJkkkNqR3AjMY=
 github.com/sfomuseum/go-edtf v0.2.0/go.mod h1:1rP0EJZ/84j3HO80vGcnG2T9MFBDAFyTNtjrr8cv3T4=
+github.com/sfomuseum/go-edtf v0.2.1 h1:wIbFlBK5jbqQOR3D79iTB+dZTBcs7DPFigPPimgkepg=
+github.com/sfomuseum/go-edtf v0.2.1/go.mod h1:1rP0EJZ/84j3HO80vGcnG2T9MFBDAFyTNtjrr8cv3T4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/whosonfirst/algnhsa v0.1.0 h1:8wVksKaz1qor2Y6+fiLEPEPxsEEvUQgSdtSTQLMrnlA=
