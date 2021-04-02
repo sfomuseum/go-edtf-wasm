@@ -1,6 +1,6 @@
 # go-edtf-wasm
 
-![](docs/images/go-edtf-wasm-0.2.0.png)
+![](docs/images/go-edtf-wasm-bootstrap.png)
 
 Go package for exposing sfomuseum/go-edtf functionality as WebAssembly binaries.
 
@@ -58,13 +58,6 @@ $> ./bin/server
 2021/01/07 17:56:48 Listening on http://localhost:8080
 ```
 
-<<<<<<< HEAD
-By default the `server` tool assumes it is running from the `go-edtf-wasm` folder and that it can find its `www` there. The `www` folder contains the `parse.wasm` binary and the web application that uses it.
-
-If you need or want to specify an alternate root directory start the server tool with the `-root` flag pointing to the correct folder to use.
-
-_Once Go 1.16 has been released and the `www` folder can be embedded directly in the `server` binary that will become the default behaviour and the `-root` flag will be removed. There is a working version of this in [the go-1.16 branch](https://github.com/sfomuseum/go-edtf-wasm/tree/go-1.16) but remember that you'll need to build a copy of Go 1.16, which is still in active development, from source in order to compile things._
-
 ## GitHub Pages
 
 ![](docs/images/go-edtf-wasm-gh-pages.png)
@@ -72,11 +65,10 @@ _Once Go 1.16 has been released and the `www` folder can be embedded directly in
 There is a version of this application available at https://sfomuseum.github.io/go-edtf-wasm/ but it does not work as of this writing. Specifically GitHub Pages do not appear to support the hosting of `.wasm` files. In the screenshot above you can see that GitHub reports the `wasm/parse.wasm` as "Not found" even though [it is definitely there](https://github.com/sfomuseum/go-edtf-wasm/blob/gh-pages/wasm/parse.wasm).
 
 If anyone knows how to fix this problem [please let me know](https://github.com/sfomuseum/go-edtf-wasm/issues).
-=======
-All of the HTML, JavaScript and `.wasm` files for the web application are kept in the `www` folder and are bundled with the `bin/server` binary using Go 1.16's [embed](https://tip.golang.org/pkg/embed/) directive.
->>>>>>> 856e6de2dccaf8f629cf3976b49b3d4e3e9a803e
 
 ## See also
 
 * https://github.com/sfomuseum/go-edtf
 * https://github.com/golang/go/wiki/WebAssembly
+* https://github.com/aaronland/go-http-server
+* https://github.com/aaronland/go-http-bootstrap

@@ -2,13 +2,10 @@ body {
 	margin: 1rem;
 }
 
-.italic {
-	font-style:italic;
-}
-
-#description {
-	margin-top:1rem;
-	margin-bottom:1rem;
+footer {
+	padding-top:1rem;
+	border-top: solid thin;
+	font-size:small;
 }
 
 #result {
@@ -19,7 +16,6 @@ body {
 	padding:1rem;
 }
 
-#code {
-	border-top: solid thin;
-	font-size:small;
+.italic {
+	font-style:italic;
 }
