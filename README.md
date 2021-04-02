@@ -4,20 +4,16 @@
 
 Go package for exposing sfomuseum/go-edtf functionality as WebAssembly binaries.
 
-## Important
-
-This branch depends on and assumes you have build Go 1.16. If you are using the `Makefile` targets described below you should update the `GO` variable defined at the top of the file to point to your Go 1.16 binary.
-
 ## Building go-edtf-wasm
 
 The easiest thing is to run the `wasm` Makefile target, like this:
 
 ```
 $> make wasm
-GOOS=js GOARCH=wasm go build -mod vendor -o cmd/server/wasm/parse.wasm cmd/parse/main.go
+GOOS=js GOARCH=wasm go build -mod vendor -o www/wasm/parse.wasm cmd/parse/main.go
 ```
 
-This will place a copy of the `parse.wasm` binary in `cmd/server/wasm/parse.wasm`.
+This will place a copy of the `parse.wasm` binary in `www/wasm/parse.wasm`.
 
 The binary exposes a single `parse_edtf` function that takes a single string as its input and returns a JSON-encoded [edtf.EDTFDate](https://github.com/sfomuseum/go-edtf#date-spans-or-edtfedtfdate), or nil, as its response.
 
@@ -62,7 +58,7 @@ $> ./bin/server
 2021/01/07 17:56:48 Listening on http://localhost:8080
 ```
 
-All of the HTML, JavaScript and `.wasm` files for the web application are kept in the `cmd/server` folder and are bundled with the `bin/server` binary using Go 1.16's [embed](https://tip.golang.org/pkg/embed/) directive.
+All of the HTML, JavaScript and `.wasm` files for the web application are kept in the `www` folder and are bundled with the `bin/server` binary using Go 1.16's [embed](https://tip.golang.org/pkg/embed/) directive.
 
 ## See also
 

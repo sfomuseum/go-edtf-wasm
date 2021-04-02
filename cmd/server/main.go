@@ -4,10 +4,9 @@ import (
 	"context"
 	"flag"
 	"github.com/aaronland/go-http-server"
-	// "github.com/aaronland/go-http-bootstrap"
-	"github.com/sfomuseum/go-edtf-wasm/www"	
-	"net/http"
+	"github.com/sfomuseum/go-edtf-wasm/www"
 	"log"
+	"net/http"
 )
 
 func main() {
