@@ -1,4 +1,4 @@
-# github.com/aaronland/go-http-server v0.0.5
+# github.com/aaronland/go-http-server v0.0.6
 ## explicit
 github.com/aaronland/go-http-server
 # github.com/aaronland/go-roster v0.0.2
@@ -9,7 +9,7 @@ github.com/aws/aws-lambda-go/lambda
 github.com/aws/aws-lambda-go/lambda/handlertrace
 github.com/aws/aws-lambda-go/lambda/messages
 github.com/aws/aws-lambda-go/lambdacontext
-# github.com/sfomuseum/go-edtf v0.2.0
+# github.com/sfomuseum/go-edtf v0.2.3
 ## explicit
 github.com/sfomuseum/go-edtf
 github.com/sfomuseum/go-edtf/calendar

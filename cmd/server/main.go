@@ -2,17 +2,13 @@ package main
 
 import (
 	"context"
-	"embed"
 	"flag"
 	"github.com/aaronland/go-http-server"
-	"log"
+	// "github.com/aaronland/go-http-bootstrap"
+	"github.com/sfomuseum/go-edtf-wasm/www"	
 	"net/http"
+	"log"
 )
-
-//go:embed index.html
-//go:embed wasm
-//go:embed javascript
-var web_app embed.FS
 
 func main() {
 
@@ -30,11 +26,15 @@ func main() {
 
 	mux := http.NewServeMux()
 
-	http_fs := http.FS(web_app)
+	http_fs := http.FS(www.FS)
 	fs_handler := http.FileServer(http_fs)
 
 	mux.Handle("/", fs_handler)
 
 	log.Printf("Listening on %s", s.Address())
-	s.ListenAndServe(ctx, mux)
+	err = s.ListenAndServe(ctx, mux)
+
+	if err != nil {
+		log.Fatalf("Failed to start server, %v", err)
+	}
 }

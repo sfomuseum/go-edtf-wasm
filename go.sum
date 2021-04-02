@@ -1,5 +1,7 @@
 github.com/aaronland/go-http-server v0.0.5 h1:DxQKt2tcoq27gjqMJ9/wKyTu0briY9lPuKwBTXXh90o=
 github.com/aaronland/go-http-server v0.0.5/go.mod h1:6dtsZDrQG0XvUOCL0eaHsUw+7gw3Xa/Nm+XofvkSw2w=
+github.com/aaronland/go-http-server v0.0.6 h1:KR6zm17QB+Mal0kpn/7vZHzj18W2O5ytGKIF7D1cN/4=
+github.com/aaronland/go-http-server v0.0.6/go.mod h1:6dtsZDrQG0XvUOCL0eaHsUw+7gw3Xa/Nm+XofvkSw2w=
 github.com/aaronland/go-roster v0.0.2 h1:2Fu7v4VQLRLRL/Zgr6R9S5JxsW75Ab/K88QtMVX532s=
 github.com/aaronland/go-roster v0.0.2/go.mod h1:AcovpxlG1XxJxX2Fjqlm63fEIBhCjEIBV4lP87FZDmI=
 github.com/akrylysov/algnhsa v0.0.0-20190319020909-05b3d192e9a7/go.mod h1:HhzjNA0EjUWcwHTUMwqrpeAdIF3gRmpH0HpWx1hYJSc=
@@ -12,6 +14,8 @@ github.com/sfomuseum/go-edtf v0.1.0 h1:ZtGEqionTmehMa0mQAJ3lDH3zaMNY9V8f+vHYNKpH
 github.com/sfomuseum/go-edtf v0.1.0/go.mod h1:1rP0EJZ/84j3HO80vGcnG2T9MFBDAFyTNtjrr8cv3T4=
 github.com/sfomuseum/go-edtf v0.2.0 h1:4fOK7kXC6mGVpntlt5ItbJZmJTaigYlJkkkNqR3AjMY=
 github.com/sfomuseum/go-edtf v0.2.0/go.mod h1:1rP0EJZ/84j3HO80vGcnG2T9MFBDAFyTNtjrr8cv3T4=
+github.com/sfomuseum/go-edtf v0.2.3 h1:wpcpwl1RD9W/sXFDi4zpoIpQcIwIk8em9CGwa7YWv4g=
+github.com/sfomuseum/go-edtf v0.2.3/go.mod h1:1rP0EJZ/84j3HO80vGcnG2T9MFBDAFyTNtjrr8cv3T4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/whosonfirst/algnhsa v0.1.0 h1:8wVksKaz1qor2Y6+fiLEPEPxsEEvUQgSdtSTQLMrnlA=
