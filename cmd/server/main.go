@@ -4,14 +4,13 @@ import (
 	"context"
 	"flag"
 	"github.com/aaronland/go-http-server"
+	"github.com/sfomuseum/go-edtf-wasm/www"
 	"log"
 	"net/http"
-	"path/filepath"
 )
 
 func main() {
 
-	root := flag.String("root", "www", "...")
 	server_uri := flag.String("server-uri", "http://localhost:8080", "A valid aaronland/go-http-server URI.")
 
 	flag.Parse()
@@ -24,18 +23,17 @@ func main() {
 		log.Fatalf("Failed to create new server, %v", err)
 	}
 
-	abs_root, err := filepath.Abs(*root)
-
-	if err != nil {
-		log.Fatalf("Failed to derive absolute path for root '%s', %v", abs_root, err)
-	}
-	
-	http_root := http.Dir(abs_root)
-	fs_handler := http.FileServer(http_root)
-	
 	mux := http.NewServeMux()
+
+	http_fs := http.FS(www.FS)
+	fs_handler := http.FileServer(http_fs)
+
 	mux.Handle("/", fs_handler)
 
 	log.Printf("Listening on %s", s.Address())
-	s.ListenAndServe(ctx, mux)
+	err = s.ListenAndServe(ctx, mux)
+
+	if err != nil {
+		log.Fatalf("Failed to start server, %v", err)
+	}
 }

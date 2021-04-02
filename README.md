@@ -58,6 +58,7 @@ $> ./bin/server
 2021/01/07 17:56:48 Listening on http://localhost:8080
 ```
 
+<<<<<<< HEAD
 By default the `server` tool assumes it is running from the `go-edtf-wasm` folder and that it can find its `www` there. The `www` folder contains the `parse.wasm` binary and the web application that uses it.
 
 If you need or want to specify an alternate root directory start the server tool with the `-root` flag pointing to the correct folder to use.
@@ -71,6 +72,9 @@ _Once Go 1.16 has been released and the `www` folder can be embedded directly in
 There is a version of this application available at https://sfomuseum.github.io/go-edtf-wasm/ but it does not work as of this writing. Specifically GitHub Pages do not appear to support the hosting of `.wasm` files. In the screenshot above you can see that GitHub reports the `wasm/parse.wasm` as "Not found" even though [it is definitely there](https://github.com/sfomuseum/go-edtf-wasm/blob/gh-pages/wasm/parse.wasm).
 
 If anyone knows how to fix this problem [please let me know](https://github.com/sfomuseum/go-edtf-wasm/issues).
+=======
+All of the HTML, JavaScript and `.wasm` files for the web application are kept in the `www` folder and are bundled with the `bin/server` binary using Go 1.16's [embed](https://tip.golang.org/pkg/embed/) directive.
+>>>>>>> 856e6de2dccaf8f629cf3976b49b3d4e3e9a803e
 
 ## See also
 
