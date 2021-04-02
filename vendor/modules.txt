@@ -1,3 +1,10 @@
+# github.com/aaronland/go-http-bootstrap v0.0.10
+## explicit
+github.com/aaronland/go-http-bootstrap
+github.com/aaronland/go-http-bootstrap/resources
+github.com/aaronland/go-http-bootstrap/static
+# github.com/aaronland/go-http-rewrite v0.0.6
+github.com/aaronland/go-http-rewrite
 # github.com/aaronland/go-http-server v0.0.6
 ## explicit
 github.com/aaronland/go-http-server
@@ -22,3 +29,6 @@ github.com/sfomuseum/go-edtf/re
 github.com/sfomuseum/go-edtf/tests
 # github.com/whosonfirst/algnhsa v0.1.0
 github.com/whosonfirst/algnhsa
+# golang.org/x/net v0.0.0-20210316092652-d523dce5a7f4
+golang.org/x/net/html
+golang.org/x/net/html/atom

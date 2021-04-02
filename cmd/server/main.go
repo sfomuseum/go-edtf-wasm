@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"flag"
+	"github.com/aaronland/go-http-bootstrap"
 	"github.com/aaronland/go-http-server"
 	"github.com/sfomuseum/go-edtf-wasm/www"
 	"log"
@@ -25,8 +26,17 @@ func main() {
 
 	mux := http.NewServeMux()
 
+	err = bootstrap.AppendAssetHandlers(mux)
+
+	if err != nil {
+		log.Fatalf("Failed to append Bootstrap asset handlers, %v", err)
+	}
+
 	http_fs := http.FS(www.FS)
 	fs_handler := http.FileServer(http_fs)
+
+	bootstrap_opts := bootstrap.DefaultBootstrapOptions()
+	fs_handler = bootstrap.AppendResourcesHandler(fs_handler, bootstrap_opts)
 
 	mux.Handle("/", fs_handler)
 
