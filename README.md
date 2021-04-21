@@ -15,7 +15,7 @@ GOOS=js GOARCH=wasm go build -mod vendor -o www/wasm/parse.wasm cmd/parse/main.g
 
 This will place a copy of the `parse.wasm` binary in `www/wasm/parse.wasm`.
 
-The binary exposes a single `parse_edtf` function that takes a single string as its input and returns a JSON-encoded [edtf.EDTFDate](https://github.com/sfomuseum/go-edtf#date-spans-or-edtfedtfdate), or nil, as its response.
+The binary exposes a single `parse_edtf` function that takes a single string as its input and returns a JavaScript promise. The promise returns a JSON-encoded [edtf.EDTFDate](https://github.com/sfomuseum/go-edtf#date-spans-or-edtfedtfdate) if successful and an error string if not.
 
 For example (with error handling omitted for the sake of brevity):
 
@@ -26,21 +26,19 @@ var edtf_str = raw_el.value;
 var result_el = document.getElementById("result");
 result_el.innerHTML = "";
     
-var rsp = parse_edtf(edtf_str);
+parse_edtf(edtf_str).then(rsp => {
 
-if (! rsp){
-    return;
-}
+	var edtf_d = JSON.parse(rsp)
 	
-var edtf_d = JSON.parse(rsp)
+	var pre = document.createElement("pre");
+	pre.innerText = JSON.stringify(edtf_d, '', 2);
 	
-var pre = document.createElement("pre");
-pre.innerText = JSON.stringify(edtf_d, '', 2);
+	result_el.appendChild(pre);
 	
-result_el.appendChild(pre);
+}).catch(err => {
+	console.log("Failed to parse EDTF string", err)
+});
 ```
-
-Obviously returning nil when there is a problem isn't great so the final return value remains to be determined.
 
 ## Serving go-edtf-wasm
 

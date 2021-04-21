@@ -31,28 +31,27 @@ async function parse() {
     
     result_el.innerHTML = "";
     
-    try {
+    parse_edtf(edtf_str).then(rsp => {
 	
-	var rsp = parse_edtf(edtf_str);
-
-	if (! rsp){
-	    result_el.innerText = "There was a problem parsing your EDTF string.";
-	}
-
-	else {
-
+	try {
 	    var edtf_d = JSON.parse(rsp)
+	} catch(e){
+	    result_el.innerText = "Unable to parse your EDTF string: " + e;
 	    
-	    var pre = document.createElement("pre");
-	    pre.innerText = JSON.stringify(edtf_d, '', 2);
-	    
-	    result_el.appendChild(pre);
+	    result_el.style.display = "block";
+	    return;
 	}
 	
-    } catch (err) {
-	result_el.innerText = "Unable to parse your EDTF string: " + err;
-    }
-
-    result_el.style.display = "block";	    	    
+	var pre = document.createElement("pre");
+	pre.innerText = JSON.stringify(edtf_d, '', 2);
+	
+	result_el.appendChild(pre);
+	result_el.style.display = "block";	    	    	
+	
+    }).catch(err => {
+	result_el.innerText = "There was a problem parsing your EDTF string:" + err;
+	result_el.style.display = "block";    	
+    });
+    
     return false;
 }
