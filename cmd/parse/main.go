@@ -2,41 +2,49 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/sfomuseum/go-edtf/parser"
 	"log"
 	"syscall/js"
 )
 
-var parse_func js.Func
+func ParseFunc() js.Func {
 
-func main() {
-
-	parse_func = js.FuncOf(func(this js.Value, args []js.Value) interface{} {
-
-		if len(args) != 1 {
-			log.Println("Invalid arguments")
-			return nil
-		}
+	return js.FuncOf(func(this js.Value, args []js.Value) interface{} {
 
 		edtf_str := args[0].String()
 
-		edtf_d, err := parser.ParseString(edtf_str)
+		handler := js.FuncOf(func(this js.Value, args []js.Value) interface{} {
 
-		if err != nil {
-			log.Printf("Failed to parse '%s', %v\n", edtf_str, err)
+			resolve := args[0]
+			reject := args[1]
+
+			edtf_d, err := parser.ParseString(edtf_str)
+
+			if err != nil {
+				reject.Invoke(fmt.Printf("Failed to parse '%s', %v\n", edtf_str, err))
+				return nil
+			}
+
+			enc, err := json.Marshal(edtf_d)
+
+			if err != nil {
+				reject.Invoke(fmt.Printf("Failed to marshal result for '%s', %v\n", edtf_str, err))
+				return nil
+			}
+
+			resolve.Invoke(string(enc))
 			return nil
-		}
+		})
 
-		enc, err := json.Marshal(edtf_d)
-
-		if err != nil {
-			log.Printf("Failed to marshal result for '%s', %v\n", edtf_str, err)
-			return nil
-		}
-
-		return string(enc)
+		promiseConstructor := js.Global().Get("Promise")
+		return promiseConstructor.New(handler)
 	})
+}
 
+func main() {
+
+	parse_func := ParseFunc()
 	defer parse_func.Release()
 
 	js.Global().Set("parse_edtf", parse_func)
