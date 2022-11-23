@@ -1,22 +1,28 @@
 # github.com/aaronland/go-http-bootstrap v0.1.0
-## explicit
+## explicit; go 1.16
 github.com/aaronland/go-http-bootstrap
 github.com/aaronland/go-http-bootstrap/static
 # github.com/aaronland/go-http-rewrite v0.0.6
+## explicit; go 1.12
 github.com/aaronland/go-http-rewrite
-# github.com/aaronland/go-http-server v0.0.7
-## explicit
+# github.com/aaronland/go-http-server v1.0.0
+## explicit; go 1.16
 github.com/aaronland/go-http-server
-# github.com/aaronland/go-roster v0.0.2
+# github.com/aaronland/go-roster v1.0.0
+## explicit; go 1.16
 github.com/aaronland/go-roster
-# github.com/aws/aws-lambda-go v1.10.0
+# github.com/akrylysov/algnhsa v0.12.1
+## explicit; go 1.12
+github.com/akrylysov/algnhsa
+# github.com/aws/aws-lambda-go v1.9.0
+## explicit
 github.com/aws/aws-lambda-go/events
 github.com/aws/aws-lambda-go/lambda
 github.com/aws/aws-lambda-go/lambda/handlertrace
 github.com/aws/aws-lambda-go/lambda/messages
 github.com/aws/aws-lambda-go/lambdacontext
-# github.com/sfomuseum/go-edtf v0.3.0
-## explicit
+# github.com/sfomuseum/go-edtf v1.1.1
+## explicit; go 1.12
 github.com/sfomuseum/go-edtf
 github.com/sfomuseum/go-edtf/calendar
 github.com/sfomuseum/go-edtf/common
@@ -26,8 +32,7 @@ github.com/sfomuseum/go-edtf/level2
 github.com/sfomuseum/go-edtf/parser
 github.com/sfomuseum/go-edtf/re
 github.com/sfomuseum/go-edtf/tests
-# github.com/whosonfirst/algnhsa v0.1.0
-github.com/whosonfirst/algnhsa
 # golang.org/x/net v0.0.0-20201002202402-0a1ea396d57c
+## explicit; go 1.11
 golang.org/x/net/html
 golang.org/x/net/html/atom
