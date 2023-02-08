@@ -105,7 +105,15 @@ class OutputGrabber(object):
 
 if __name__ == "__main__":
 
-    r = open("../www/wasi/parse.wasm", "rb")
+    import optparse
+    opt_parser = optparse.OptionParser()
+
+    opt_parser.add_option('-e', '--edtf', dest='edtf', action='store', default='flatfile', help='The EDTF string to parse')
+    opt_parser.add_option('-w', '--wasi', dest='wasi', action='store', default=None, help='The path to the WASI binary to compile')
+
+    options, args = opt_parser.parse_args()
+    
+    r = open(options.wasi, "rb")
 
     store = Store(engine.JIT(Compiler))
     
@@ -114,7 +122,7 @@ if __name__ == "__main__":
     wasi_version = wasi.get_version(module, strict=True)
 
     wasi_env = wasi.StateBuilder('main').  \
-        argument(sys.argv[1]). \
+        argument(options.edtf). \
         finalize()
     
     import_object = wasi_env.generate_import_object(store, wasi_version)
