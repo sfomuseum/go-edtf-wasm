@@ -1,4 +1,4 @@
-package tinygo
+package json
 
 import (
 	"fmt"

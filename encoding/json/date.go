@@ -1,4 +1,4 @@
-package tinygo
+package json
 
 import (
 	"fmt"
@@ -50,7 +50,7 @@ func MarshalDate(d *edtf.Date) ([]byte, error) {
 		return nil, fmt.Errorf("Failed to marshal ymd value, %w", err)
 	}
 
-	v := fmt.Sprintf(`{"approximate": %t, "datetime": %s, "inclusivity": %s, "open": %t, "precision": %s", "timestamp": %s, "uncertain": %s, "unknown": %t, "unspecified": %s, "ymd": %s}`, string(approximate), d.DateTime, string(inclusivity), d.Open, string(precision), string(timestamp), string(uncertain), d.Unknown, string(unspecified), string(ymd))
+	v := fmt.Sprintf(`{"approximate": %s, "datetime": "%s", "inclusivity": %s, "open": %t, "precision": %s, "timestamp": %s, "uncertain": %s, "unknown": %t, "unspecified": %s, "ymd": %s}`, string(approximate), d.DateTime, string(inclusivity), d.Open, string(precision), string(timestamp), string(uncertain), d.Unknown, string(unspecified), string(ymd))
 
 	return []byte(v), nil
 }

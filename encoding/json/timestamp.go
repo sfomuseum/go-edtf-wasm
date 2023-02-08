@@ -1,4 +1,4 @@
-package tinygo
+package json
 
 import (
 	"github.com/sfomuseum/go-edtf"
