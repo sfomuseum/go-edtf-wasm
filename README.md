@@ -4,7 +4,9 @@
 
 Go package for exposing sfomuseum/go-edtf functionality as WebAssembly binaries.
 
-## Building go-edtf-wasm
+## WASM
+
+### Building
 
 The easiest thing is to run the `wasm` Makefile target, like this:
 
@@ -40,7 +42,7 @@ parse_edtf(edtf_str).then(rsp => {
 });
 ```
 
-## Serving go-edtf-wasm
+### Serving go-edtf-wasm
 
 The package comes with a handy `server` tool for serving the `parse.wasm` binary and a simple web page for parsing EDTF date strings.
 
@@ -56,13 +58,122 @@ $> ./bin/server
 2021/01/07 17:56:48 Listening on http://localhost:8080
 ```
 
-## GitHub Pages
+## WASI
 
-![](docs/images/go-edtf-wasm-gh-pages.png)
+### Building
 
-There is a version of this application available at https://sfomuseum.github.io/go-edtf-wasm/ but it does not work as of this writing. Specifically GitHub Pages do not appear to support the hosting of `.wasm` files. In the screenshot above you can see that GitHub reports the `wasm/parse.wasm` as "Not found" even though [it is definitely there](https://github.com/sfomuseum/go-edtf-wasm/blob/gh-pages/wasm/parse.wasm).
+The easiest thing is to run the `wasi` Makefile target, like this:
 
-If anyone knows how to fix this problem [please let me know](https://github.com/sfomuseum/go-edtf-wasm/issues).
+```
+$> make wasi
+tinygo build -no-debug -o www/wasi/parse.wasm -target wasi ./cmd/parse-wasi/main.go
+```
+
+This will place a copy of the `parse.wasm` binary in `www/wasi/parse.wasm`.
+
+Note that this requires having a copy of [TinyGo](https://tinygo.org/) installed and findable in your local path.
+
+### Python
+
+There is a still-experimental Python script for running the ``www/wasi/parse.wasm` binary in the `python` directory. It depends on the [wasmer-python](https://github.com/wasmerio/wasmer-python) libraries already being installed.
+
+```
+$> /usr/local/opt/python@3.10/bin/python3.10 ./python/parse.py -h
+Usage: parse.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -e EDTF, --edtf=EDTF  The EDTF string to parse
+  -w WASI, --wasi=WASI  The path to the WASI binary to compile
+```
+
+If successful the program will emit a JSON-encoded [edtf.EDTFDate](https://pkg.go.dev/github.com/sfomuseum/go-edtf#EDTFDate) struct to STDOUT. If not successful the program will emit an error message to STDOUT. Better error handling and reporting is expected to follow shortly.
+
+For example:
+
+```
+$> /usr/local/opt/python@3.10/bin/python3.10 ./python/parse.py \
+	--wasi ./www/wasi/parse.wasm \
+	--edtf '2022-05~'
+	
+	| jq
+	
+{
+  "edtf": "2022-05~",
+  "end": {
+    "edtf": "2022-05-31",
+    "lower": {
+      "approximate": 0,
+      "datetime": "2022-05-31T00:00:00Z",
+      "inclusivity": 0,
+      "open": false,
+      "precision": 64,
+      "timestamp": 1653955200,
+      "uncertain": 0,
+      "unknown": false,
+      "unspecified": 0,
+      "ymd": {
+        "day": 31,
+        "month": 5,
+        "year": 2022
+      }
+    },
+    "upper": {
+      "approximate": 0,
+      "datetime": "2022-05-31T23:59:59Z",
+      "inclusivity": 0,
+      "open": false,
+      "precision": 64,
+      "timestamp": 1654041599,
+      "uncertain": 0,
+      "unknown": false,
+      "unspecified": 0,
+      "ymd": {
+        "day": 31,
+        "month": 5,
+        "year": 2022
+      }
+    }
+  },
+  "feature": "Seasons",
+  "level": 1,
+  "start": {
+    "edtf": "2022-05-01",
+    "lower": {
+      "approximate": 0,
+      "datetime": "2022-05-01T00:00:00Z",
+      "inclusivity": 0,
+      "open": false,
+      "precision": 64,
+      "timestamp": 1651363200,
+      "uncertain": 0,
+      "unknown": false,
+      "unspecified": 0,
+      "ymd": {
+        "day": 1,
+        "month": 5,
+        "year": 2022
+      }
+    },
+    "upper": {
+      "approximate": 0,
+      "datetime": "2022-05-01T23:59:59Z",
+      "inclusivity": 0,
+      "open": false,
+      "precision": 64,
+      "timestamp": 1651449599,
+      "uncertain": 0,
+      "unknown": false,
+      "unspecified": 0,
+      "ymd": {
+        "day": 1,
+        "month": 5,
+        "year": 2022
+      }
+    }
+  }
+}
+```
 
 ## See also
 
