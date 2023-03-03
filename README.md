@@ -97,3 +97,4 @@ Please consult the [sfomuseum/py-edtf](https://github.com/sfomuseum/py-edtf) pac
 
 * https://github.com/aaronland/go-http-server
 * https://github.com/aaronland/go-http-bootstrap
+* https://github.com/sfomuseum/go-http-wasm

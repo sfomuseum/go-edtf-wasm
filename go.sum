@@ -4,6 +4,8 @@ github.com/aaronland/go-http-rewrite v1.0.1 h1:BWUlr88wN+jQJUGFd5sSl5fysxHlLYN0F
 github.com/aaronland/go-http-rewrite v1.0.1/go.mod h1:DVpymWnsPZI9P2cmgs6lz2cWiUltfDJ6UNOwuvSXyF0=
 github.com/aaronland/go-http-server v1.0.0 h1:AF+4JLEyXNj7Mulpcx8yaek1RWGojWOQMg5vinEDDVs=
 github.com/aaronland/go-http-server v1.0.0/go.mod h1:gJ2TDOB9EhK8IULIf3UqVYcv1TaEa5N2er9YaBvD2M0=
+github.com/aaronland/go-http-static v0.0.2 h1:bZd0yA3HyNyAi7c+HqXoHnNPi4dzyjXHxXPGLcxzQiE=
+github.com/aaronland/go-http-static v0.0.2/go.mod h1:EjI6EhoO2bD96gOPVipla9uokf60MX9UkX0bhiTd5Vo=
 github.com/aaronland/go-roster v1.0.0 h1:FRDGrTqsYySKjWnAhbBGXyeGlI/o5/t9FZYCbUmyQtI=
 github.com/aaronland/go-roster v1.0.0/go.mod h1:KIsYZgrJlAsyb9LsXSCvlqvbcCBVjCSqcQiZx42i9ro=
 github.com/akrylysov/algnhsa v0.12.1 h1:A9Ojt4hZrL77mhBc3qGO3Sn9reyf+tvM3DmR0SfXguc=
@@ -16,6 +18,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/sfomuseum/go-edtf v1.1.1 h1:R5gElndHGDaK/rGSh2X+ulaLtlcHCdQA1cTzB8e9wv8=
 github.com/sfomuseum/go-edtf v1.1.1/go.mod h1:1rP0EJZ/84j3HO80vGcnG2T9MFBDAFyTNtjrr8cv3T4=
+github.com/sfomuseum/go-http-wasm v1.1.0 h1:J8mTCpZo8P6HUjyM5VqlL+8AYuohF/b6J+JNHi6Vho8=
+github.com/sfomuseum/go-http-wasm v1.1.0/go.mod h1:njFA3D6WDdiawJKKvOtymMwkh4lYLsZ9X9SBuB7ldJg=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0Q=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=

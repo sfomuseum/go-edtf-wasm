@@ -6,6 +6,7 @@ import (
 	"github.com/aaronland/go-http-bootstrap"
 	"github.com/aaronland/go-http-server"
 	"github.com/sfomuseum/go-edtf-wasm/www"
+	"github.com/sfomuseum/go-http-wasm"	
 	"log"
 	"net/http"
 )
@@ -32,12 +33,21 @@ func main() {
 		log.Fatalf("Failed to append Bootstrap asset handlers, %v", err)
 	}
 
+	err = wasm.AppendAssetHandlers(mux)
+
+	if err != nil {
+		log.Fatalf("Failed to append wasm assets handler, %v", err)
+	}
+	
 	http_fs := http.FS(www.FS)
 	fs_handler := http.FileServer(http_fs)
 
 	bootstrap_opts := bootstrap.DefaultBootstrapOptions()
 	fs_handler = bootstrap.AppendResourcesHandler(fs_handler, bootstrap_opts)
 
+	wasm_opts := wasm.DefaultWASMOptions()
+	fs_handler = wasm.AppendResourcesHandler(fs_handler, wasm_opts)
+	
 	mux.Handle("/", fs_handler)
 
 	log.Printf("Listening on %s", s.Address())

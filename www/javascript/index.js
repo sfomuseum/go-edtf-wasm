@@ -1,31 +1,22 @@
-if (! WebAssembly.instantiateStreaming){
-	 
-    WebAssembly.instantiateStreaming = async (resp, importObject) => {
-        const source = await (await resp).arrayBuffer();
-        return await WebAssembly.instantiate(source, importObject);
-    };
-}
+window.addEventListener("load", function load(event){
 
-const go = new Go();
-
-let mod, inst;
-
-WebAssembly.instantiateStreaming(fetch("/wasm/parse.wasm"), go.importObject).then(
+    // https://github.com/sfomuseum/go-http-wasm
+    // https://github.com/sfomuseum/go-http-wasm/blob/main/static/javascript/sfomuseum.wasm.js
     
-    async result => {
+    sfomuseum.wasm.fetch("/wasm/parse.wasm").then(rsp => {
 	document.getElementById("button").innerText = "Parse";
 	document.getElementById("button").removeAttribute("disabled");
-        mod = result.module;
-        inst = result.instance;
-	await go.run(inst);
-    }
-);
+    }).catch(err => {
+	console.log("Failed to initialize parse.wasm", err)
+    });
+    
+});
 
 async function parse() {
     
     var raw_el = document.getElementById("raw");
     var edtf_str = raw_el.value;
-
+    
     var result_el = document.getElementById("result");
     result_el.style.display = "none";
     
@@ -55,3 +46,4 @@ async function parse() {
     
     return false;
 }
+    
