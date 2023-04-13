@@ -8,6 +8,9 @@ rebuild:
 wasi:
 	tinygo build -no-debug -o www/wasi/parse.wasm -target wasi ./cmd/parse-wasi/main.go
 
+wasip:
+	GOARCH=wasm GOOS=wasip1 ~/go/bin/gotip build -mod $(GOMOD) -o www/wasi/parse.wasm ./cmd/parse-wasi/main.go
+
 wasm:
 	GOOS=js GOARCH=wasm go build -mod $(GOMOD) -ldflags="-s -w" -o www/wasm/parse.wasm cmd/parse/main.go
 
