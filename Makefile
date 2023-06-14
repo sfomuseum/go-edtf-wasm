@@ -4,9 +4,8 @@ GOMOD=vendor
 rebuild:
 	@make wasm
 
-# Note 'wasi' requires Go 1.18-1.19 (1.20 is not supported by TinyGo yet)
 wasi:
-	tinygo build -no-debug -o www/wasi/parse.wasm -target wasi ./cmd/parse-wasi/main.go
+	~/sfomuseum/tinygo/build/tinygo build -no-debug -o www/wasi/parse.wasm -target wasi ./cmd/parse-wasi/main.go
 
 wasip:
 	GOARCH=wasm GOOS=wasip1 ~/go/bin/gotip build -mod $(GOMOD) -o www/wasi/parse.wasm ./cmd/parse-wasi/main.go
@@ -17,3 +16,6 @@ wasm:
 cli:
 	@make wasm
 	go build -mod $(GOMOD) -o bin/server cmd/server/main.go
+
+server:
+	go run -mod $(GOMOD) cmd/server/main.go
