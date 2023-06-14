@@ -39,7 +39,7 @@ github.com/sfomuseum/go-edtf/tests
 ## explicit; go 1.18
 github.com/sfomuseum/go-http-wasm
 github.com/sfomuseum/go-http-wasm/static
-# golang.org/x/net v0.0.0-20220425223048-2871e0cb64e4
+# golang.org/x/net v0.7.0
 ## explicit; go 1.17
 golang.org/x/net/html
 golang.org/x/net/html/atom
