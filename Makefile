@@ -4,7 +4,7 @@ GOMOD=vendor
 rebuild:
 	@make wasm
 
-# Note 'wasi' requires Go 1.18-1.19 (1.20 is not supported by TinyGo yet)
+# Note 'wasi' requires TinyGo 0.28.0 or highter
 wasi:
 	tinygo build -no-debug -o www/wasi/parse.wasm -target wasi ./cmd/parse-wasi/main.go
 
