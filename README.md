@@ -71,7 +71,7 @@ tinygo build -no-debug -o www/wasi/parse.wasm -target wasi ./cmd/parse-wasi/main
 
 This will place a copy of the `parse.wasm` binary in `www/wasi/parse.wasm`.
 
-Note that this requires having a copy of [TinyGo](https://tinygo.org/) installed and findable in your local path.
+Note that this requires having a copy of [TinyGo](https://tinygo.org/) `v0.28.0` or higher installed and findable in your local path.
 
 ### Python
 
