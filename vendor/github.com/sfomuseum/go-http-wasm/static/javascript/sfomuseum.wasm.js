@@ -36,11 +36,13 @@ sfomuseum.wasm = (function(){
 		    headers: fetch_headers,
 		};
 
+		self.log("fetch " + wasm_uri);
+		
 		WebAssembly.instantiateStreaming(fetch(wasm_uri, fetch_opts), export_go.importObject).then(
 		    
 		    async result => {
 
-			console.log("OK", wasm_uri);
+			self.log("retrieved " + wasm_uri);			
 			
 			pending -= 1;
 			
@@ -56,7 +58,11 @@ sfomuseum.wasm = (function(){
 		
 	    });
 	},
-	
+
+	'log': function(msg) {
+	    var dt = new Date();
+	    console.log("[wasm][" + dt.toISOString() + "] fetch " + msg);	    
+	}
     };
 
     return self;

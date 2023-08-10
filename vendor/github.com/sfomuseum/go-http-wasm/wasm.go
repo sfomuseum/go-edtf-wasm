@@ -9,7 +9,10 @@ import (
 
 // WASMOptions provides a list of JavaScript and CSS link to include with HTML output.
 type WASMOptions struct {
-	JS  []string
+	JS []string
+	// AppendJavaScriptAtEOF is a boolean flag to append JavaScript markup at the end of an HTML document
+	// rather than in the <head> HTML element. Default is false
+	AppendJavaScriptAtEOF bool
 }
 
 // Return a *WASMOptions struct with default paths and URIs.
@@ -18,7 +21,7 @@ func DefaultWASMOptions() *WASMOptions {
 	opts := &WASMOptions{
 		JS: []string{
 			"/javascript/wasm_exec.js",
-			"/javascript/sfomuseum.wasm.js",			
+			"/javascript/sfomuseum.wasm.js",
 		},
 	}
 
@@ -35,6 +38,7 @@ func AppendResourcesHandlerWithPrefix(next gohttp.Handler, opts *WASMOptions, pr
 
 	static_opts := aa_static.DefaultResourcesOptions()
 	static_opts.JS = opts.JS
+	static_opts.AppendJavaScriptAtEOF = opts.AppendJavaScriptAtEOF
 
 	return aa_static.AppendResourcesHandlerWithPrefix(next, static_opts, prefix)
 }
