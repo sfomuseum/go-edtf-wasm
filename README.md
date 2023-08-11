@@ -58,7 +58,27 @@ $> ./bin/server
 2021/01/07 17:56:48 Listening on http://localhost:8080
 ```
 
+## WASI(p)
+
+Generate a WASM (WASI) file using Go 1.21.0 or higher.
+
+### Building
+
+The easiest thing is to run the `wasip` Makefile target, like this:
+
+```
+$> make wasip
+GOARCH=wasm GOOS=wasip1 go build -mod vendor -ldflags="-s -w" -o www/wasip/parse.wasm ./cmd/parse-wasi/main.go
+```
+This will place a copy of the `parse.wasm` binary in `www/wasip/parse.wasm`.
+
+Note that WASM (WASI) files produced by Go are substantially larger than WASM files produced by TinyGo (see below).
+
 ## WASI
+
+Generate a WASM (WASI) file using TinyGo 0.28.1.
+
+_Note: As of this writing this will not work with Go 1.21, only Go 1.20.x_
 
 ### Building
 
