@@ -1,11 +1,11 @@
 GOROOT=$(shell go env GOROOT)
-GOMOD=vendor
+GOMOD=$(shell test -f "go.work" && echo "readonly" || echo "vendor")
 
 rebuild:
 	@make wasm
 
 wasi:
-	~/sfomuseum/tinygo/build/tinygo build -no-debug -o www/wasi/parse.wasm -target wasi ./cmd/parse-wasi/main.go
+	tinygo build -no-debug -o www/wasi/parse.wasm -target wasi ./cmd/parse-wasi/main.go
 
 wasip:
 	GOARCH=wasm GOOS=wasip1 go build -mod $(GOMOD) -ldflags="-s -w" -o www/wasi/parse.wasm ./cmd/parse-wasi/main.go

@@ -22,7 +22,7 @@ First, import the `net/http` and `go-http-wasm` packages.
 import (
        "net/http"
 
-	"github.com/sfomuseum/go-http-wasm"
+	"github.com/sfomuseum/go-http-wasm/v2"
 )
 ```
 
@@ -31,18 +31,19 @@ Next, create standard `net/http` mux and handler instances. The details of these
 ```
 example_mux := http.NewServeMux()
 example_handler := SomeHTTPHandler()
+
+wasm_opts := wasm.DefaultWASMOptions()
 ```
 
 Next, append relevant handlers for serving WASM-related assets (in this case `wasm_exec.js`) to the mux instance.
 
 ```
-wasm.AppendAssetHandlers(mux)
+wasm.AppendAssetHandlers(mux, wasm_opts)
 ```
 
 Finally, wrap the handler instance with `wasm.AppendResourcesHandler`. This will append the relevant JavaScript directives to HTML output reference the WASM-related assets that were added using the `wasm.AppendAssetHandlers` method.
 
 ```
-wasm_opts := wasm.DefaultWASMOptions()
 example_handler = wasm.AppendResourcesHandler(example_handler, wasm_opts)
 	
 example_mux.Handle("/", example_handler)
@@ -79,7 +80,7 @@ import (
 	"net/http"
 
 	placetypes_wasm "github.com/whosonfirst/go-whosonfirst-placetypes-wasm/http"
-	"github.com/sfomuseum/go-http-wasm"
+	"github.com/sfomuseum/go-http-wasm/v2"
 )
 
 //go:embed index.html example.*
@@ -97,10 +98,11 @@ func main() {
 	http_fs := http.FS(FS)
 	example_handler := http.FileServer(http_fs)
 
-	wasm.AppendAssetHandlers(mux)
+	wasm_opts := wasm.DefaultWASMOptions()
+	
+	wasm.AppendAssetHandlers(mux, wasm_opts)
 	placetypes_wasm.AppendAssetHandlers(mux)
 
-	wasm_opts := wasm.DefaultWASMOptions()
 	example_handler = wasm.AppendResourcesHandler(example_handler, wasm_opts)
 	
 	mux.Handle("/", example_handler)

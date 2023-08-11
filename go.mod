@@ -6,7 +6,7 @@ require (
 	github.com/aaronland/go-http-bootstrap v0.4.0
 	github.com/aaronland/go-http-server v1.2.0
 	github.com/sfomuseum/go-edtf v1.1.1
-	github.com/sfomuseum/go-http-wasm v1.2.0
+	github.com/sfomuseum/go-http-wasm/v2 v2.0.1
 )
 
 require (

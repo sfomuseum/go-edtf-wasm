@@ -27,8 +27,8 @@ github.com/sfomuseum/go-edtf v1.1.1 h1:R5gElndHGDaK/rGSh2X+ulaLtlcHCdQA1cTzB8e9w
 github.com/sfomuseum/go-edtf v1.1.1/go.mod h1:1rP0EJZ/84j3HO80vGcnG2T9MFBDAFyTNtjrr8cv3T4=
 github.com/sfomuseum/go-http-rollup v0.0.2 h1:cc0p0pppG1VJc6o3IUdkbocPnJedRzOqxWFNlz2mkYM=
 github.com/sfomuseum/go-http-rollup v0.0.2/go.mod h1:kxVTXkkaUsxVAMq3lFSNoILzKkv1L4ETuaQiDCQcBfI=
-github.com/sfomuseum/go-http-wasm v1.2.0 h1:P452JeWZXTP2wcZuX6W/yF54izusxP9Wt4u4f80/u7I=
-github.com/sfomuseum/go-http-wasm v1.2.0/go.mod h1:/4+K3vkIwCR/XkEyw03eIZkT2cw9YWdZyMMcbObLqC4=
+github.com/sfomuseum/go-http-wasm/v2 v2.0.1 h1:K20UDm53JXbaSGNR0Hulms1qnRKLc7XEZgy83uukrZo=
+github.com/sfomuseum/go-http-wasm/v2 v2.0.1/go.mod h1:42p9f6BmPN/s5wsCm9d+XMNJdkyTYlmVx/L3kXx+GAg=
 github.com/spf13/pflag v1.0.5/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=
 github.com/stretchr/testify v1.7.2 h1:4jaiDzPyXQvSd7D0EjG45355tLlV3VOECpq10pLC+8s=
 github.com/stretchr/testify v1.7.2/go.mod h1:R6va5+xMeoiuVRoj+gSkQ7d3FALtqAAGI1FQKckRals=
