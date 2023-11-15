@@ -2,8 +2,8 @@ github.com/aaronland/go-http-bootstrap v0.4.0 h1:W+wXKbJvpT7eW3hjjLNXDfJy980+G/x
 github.com/aaronland/go-http-bootstrap v0.4.0/go.mod h1:v71tU1uyr8cSInBOV2vhnaV+l3bQ/yEtkPvchD1Ho64=
 github.com/aaronland/go-http-rewrite v1.1.0 h1:HhsltNyYRnIz2FR+qANZLx2ykiRuNuNK1JgPonKBLHQ=
 github.com/aaronland/go-http-rewrite v1.1.0/go.mod h1:iA9jQBureJrzO6fTzmRLS+fkbAI1Fna71iTb1hP8n3k=
-github.com/aaronland/go-http-server v1.2.0 h1:UOWlZwhW/Qb4CUG60zStmiwj1xweqOfZOA1J8jNIo2I=
-github.com/aaronland/go-http-server v1.2.0/go.mod h1:oADvZbSg6tH2aqZSRzVJW9vSJ+xVDEZqMqEjR76xeAs=
+github.com/aaronland/go-http-server v1.3.0 h1:LRkmG6i3BHTqxjtW6ZhcH0VpBo/UPSv0454u1GY0RK4=
+github.com/aaronland/go-http-server v1.3.0/go.mod h1:m0lnF7yEaXAPBwa0oIAqyl4BkrtfFcDeTHXQYrlCavQ=
 github.com/aaronland/go-http-static v0.0.3 h1:0MnYXNwGVDCzre5YwinfPSdAFHInbBbmBv5hJtb/FX8=
 github.com/aaronland/go-http-static v0.0.3/go.mod h1:/s6lHGXq95ZR9nMJmE9slE4uMi92GP34CuG3f9xlfsY=
 github.com/aaronland/go-log/v2 v2.0.0 h1:lMoaVDHd4Etaz2+ibze3ReqvHHG68z2SpuxYXv12WlE=
@@ -12,8 +12,8 @@ github.com/aaronland/go-roster v1.0.0 h1:FRDGrTqsYySKjWnAhbBGXyeGlI/o5/t9FZYCbUm
 github.com/aaronland/go-roster v1.0.0/go.mod h1:KIsYZgrJlAsyb9LsXSCvlqvbcCBVjCSqcQiZx42i9ro=
 github.com/akrylysov/algnhsa v1.0.0 h1:qlogYL9n7MfU/TJJJCKqpg6gLgCuR/IkdFGwIJClBnE=
 github.com/akrylysov/algnhsa v1.0.0/go.mod h1:ConzNpk7uLAl7Hi5LqcImgl3Oq2flRe6W7zum5A1p/8=
-github.com/aws/aws-lambda-go v1.37.0 h1:WXkQ/xhIcXZZ2P5ZBEw+bbAKeCEcb5NtiYpSwVVzIXg=
-github.com/aws/aws-lambda-go v1.37.0/go.mod h1:jwFe2KmMsHmffA1X2R09hH6lFzJQxzI8qK17ewzbQMM=
+github.com/aws/aws-lambda-go v1.41.0 h1:l/5fyVb6Ud9uYd411xdHZzSf2n86TakxzpvIoz7l+3Y=
+github.com/aws/aws-lambda-go v1.41.0/go.mod h1:jwFe2KmMsHmffA1X2R09hH6lFzJQxzI8qK17ewzbQMM=
 github.com/cheekybits/is v0.0.0-20150225183255-68e9c0620927/go.mod h1:h/aW8ynjgkuj+NQRlZcDbAbM1ORAbXjXX77sX7T289U=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
