@@ -19,6 +19,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/djherbis/atime v1.1.0/go.mod h1:28OF6Y8s3NQWwacXc5eZTsEsiMzp7LF8MbXE+XJPdBE=
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
+github.com/extism/go-pdk v1.0.2 h1:UB7oTW3tw2zoMlsUdBEDAAbhQg9OudzgNeyCwQYZ730=
+github.com/extism/go-pdk v1.0.2/go.mod h1:Gz+LIU/YCKnKXhgge8yo5Yu1F/lbv7KtKFkiCSzW/P4=
 github.com/fsnotify/fsnotify v1.5.4/go.mod h1:OVB6XrOHzAwXMpEM7uPOzcehqUV2UqJxmVXmkdnm1bU=
 github.com/matryer/try v0.0.0-20161228173917-9ac251b645a2/go.mod h1:0KeJpeMD6o+O4hW7qJOT7vyQPKrWmj26uf5wMc/IiIs=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
@@ -27,8 +29,8 @@ github.com/sfomuseum/go-edtf v1.1.1 h1:R5gElndHGDaK/rGSh2X+ulaLtlcHCdQA1cTzB8e9w
 github.com/sfomuseum/go-edtf v1.1.1/go.mod h1:1rP0EJZ/84j3HO80vGcnG2T9MFBDAFyTNtjrr8cv3T4=
 github.com/sfomuseum/go-http-rollup v0.0.2 h1:cc0p0pppG1VJc6o3IUdkbocPnJedRzOqxWFNlz2mkYM=
 github.com/sfomuseum/go-http-rollup v0.0.2/go.mod h1:kxVTXkkaUsxVAMq3lFSNoILzKkv1L4ETuaQiDCQcBfI=
-github.com/sfomuseum/go-http-wasm/v2 v2.0.1 h1:K20UDm53JXbaSGNR0Hulms1qnRKLc7XEZgy83uukrZo=
-github.com/sfomuseum/go-http-wasm/v2 v2.0.1/go.mod h1:42p9f6BmPN/s5wsCm9d+XMNJdkyTYlmVx/L3kXx+GAg=
+github.com/sfomuseum/go-http-wasm/v2 v2.1.0 h1:5VCl1a/pUsAq1+uF2pOR+vEuGRCeepRYKrgWtkUZ72c=
+github.com/sfomuseum/go-http-wasm/v2 v2.1.0/go.mod h1:0C7F2ZBhUNRTYchy6ANAZcJr9F+vDBsp0VJ2Mth/vzs=
 github.com/spf13/pflag v1.0.5/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=
 github.com/stretchr/testify v1.7.2 h1:4jaiDzPyXQvSd7D0EjG45355tLlV3VOECpq10pLC+8s=
 github.com/stretchr/testify v1.7.2/go.mod h1:R6va5+xMeoiuVRoj+gSkQ7d3FALtqAAGI1FQKckRals=

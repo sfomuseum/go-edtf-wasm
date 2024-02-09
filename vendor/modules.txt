@@ -27,6 +27,9 @@ github.com/aws/aws-lambda-go/lambda
 github.com/aws/aws-lambda-go/lambda/handlertrace
 github.com/aws/aws-lambda-go/lambda/messages
 github.com/aws/aws-lambda-go/lambdacontext
+# github.com/extism/go-pdk v1.0.2
+## explicit; go 1.21.0
+github.com/extism/go-pdk
 # github.com/sfomuseum/go-edtf v1.1.1
 ## explicit; go 1.12
 github.com/sfomuseum/go-edtf
@@ -41,7 +44,7 @@ github.com/sfomuseum/go-edtf/tests
 # github.com/sfomuseum/go-http-rollup v0.0.2
 ## explicit; go 1.20
 github.com/sfomuseum/go-http-rollup
-# github.com/sfomuseum/go-http-wasm/v2 v2.0.1
+# github.com/sfomuseum/go-http-wasm/v2 v2.1.0
 ## explicit; go 1.18
 github.com/sfomuseum/go-http-wasm/v2
 github.com/sfomuseum/go-http-wasm/v2/static

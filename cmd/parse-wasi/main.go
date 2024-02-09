@@ -1,31 +1,31 @@
 package main
 
 import (
-        "flag"
-        "fmt"
-        "encoding/json"
-	
-        "github.com/sfomuseum/go-edtf/parser"
+	"encoding/json"
+	"flag"
+	"fmt"
+
+	"github.com/sfomuseum/go-edtf/parser"
 )
 
-func main(){
+func main() {
 
-        flag.Parse()
+	flag.Parse()
 
-        for _, raw := range flag.Args(){
-                fmt.Println(parse(raw))
-        }
+	for _, raw := range flag.Args() {
+		fmt.Println(parse(raw))
+	}
 }
 
 //export parse
 func parse(raw string) string {
 
-        d, err := parser.ParseString(raw)
+	d, err := parser.ParseString(raw)
 
-        if err != nil {
-                return err.Error()
-        } else {
-	
+	if err != nil {
+		return err.Error()
+	} else {
+
 		v, err := json.Marshal(d)
 
 		if err != nil {
@@ -33,6 +33,6 @@ func parse(raw string) string {
 		}
 
 		return string(v)
-        }
+	}
 
 }

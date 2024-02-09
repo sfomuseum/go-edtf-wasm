@@ -1,12 +1,15 @@
 module github.com/sfomuseum/go-edtf-wasm
 
-go 1.21
+go 1.21.0
+
+toolchain go1.22.0
 
 require (
 	github.com/aaronland/go-http-bootstrap v0.4.0
 	github.com/aaronland/go-http-server v1.3.0
+	github.com/extism/go-pdk v1.0.2
 	github.com/sfomuseum/go-edtf v1.1.1
-	github.com/sfomuseum/go-http-wasm/v2 v2.0.1
+	github.com/sfomuseum/go-http-wasm/v2 v2.1.0
 )
 
 require (

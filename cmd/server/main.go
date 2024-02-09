@@ -9,7 +9,7 @@ import (
 	"github.com/aaronland/go-http-bootstrap"
 	"github.com/aaronland/go-http-server"
 	"github.com/sfomuseum/go-edtf-wasm/www"
-	"github.com/sfomuseum/go-http-wasm/v2"		
+	"github.com/sfomuseum/go-http-wasm/v2"
 )
 
 func main() {
@@ -29,7 +29,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	bootstrap_opts := bootstrap.DefaultBootstrapOptions()
-	
+
 	err = bootstrap.AppendAssetHandlers(mux, bootstrap_opts)
 
 	if err != nil {
@@ -37,20 +37,20 @@ func main() {
 	}
 
 	wasm_opts := wasm.DefaultWASMOptions()
-	
+
 	err = wasm.AppendAssetHandlers(mux, wasm_opts)
 
 	if err != nil {
 		log.Fatalf("Failed to append wasm assets handler, %v", err)
 	}
-	
+
 	http_fs := http.FS(www.FS)
 	fs_handler := http.FileServer(http_fs)
 
 	fs_handler = bootstrap.AppendResourcesHandler(fs_handler, bootstrap_opts)
 
 	fs_handler = wasm.AppendResourcesHandler(fs_handler, wasm_opts)
-	
+
 	mux.Handle("/", fs_handler)
 
 	log.Printf("Listening on %s", s.Address())
