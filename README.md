@@ -4,6 +4,10 @@
 
 Go package for exposing sfomuseum/go-edtf functionality as WebAssembly binaries.
 
+## Deprecation notice
+
+This package has been deprecated. All it's functionality has been migrated to the [sfomuseum/go-edtf](https://github.com/sfomuseum/go-edtf#webassembly-wasm) package.
+
 ## WASM
 
 ### Building
